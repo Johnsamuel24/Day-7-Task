@@ -1,0 +1,17 @@
+body{
+      background-image: url('img1.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+}
+
+#d1{
+      color:white;
+      background-color: black;
+      opacity: 0.5;
+
+      text-align: center;
+      font-size: 30px;
+      font-family: 'Times New Roman';
+}

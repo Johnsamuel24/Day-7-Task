@@ -1,0 +1,88 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+
+<html>
+  <head>
+    <title> Country using US Dollars as currency</title>
+    <link rel="stylesheet" href="task5.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="container" id="d1">
+    <p>Country using US Dollars as currency
+        <br><br> SEE THE CONSOLE </p>
+      </div>
+    <script>
+      
+      var xhr = new XMLHttpRequest();
+
+      
+      var method = "GET";
+      var url = "https://restcountries.com/v3.1/all";
+
+   
+      xhr.open(method, url);
+      
+      xhr.onload = function () {
+        if (xhr.status === 200) {
+     
+          
+          
+
+          var countriesdetails = JSON.parse(xhr.responseText);
+          
+          let z;
+         
+          
+         
+           countriesdetails.forEach( i => { 
+            z=i.currencies;
+   if(i.currencies)
+         if(Object.keys(z) == 'USD')
+            {
+       
+       console.log("Name    :",i.name.common);
+       console.log(i);
+       console.log("\n");
+            
+    }
+             });
+         
+
+
+
+
+
+
+
+        } else {
+         
+          console.log("Request failed", xhr.status);
+        }
+      };
+
+     
+      xhr.send();
+    </script>
+  </body>
+</html>
